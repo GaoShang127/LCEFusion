@@ -50,7 +50,41 @@ TensorBoard         2.14.0
 tqdm                4.66.1
 ```
 
-## Dataset Preparation
+## Quick Start
+
+```text
+(https://pan.baidu.com/s/16Cintf-sPJgf0qHPhRtXWA?pwd=jfg1/weight)
+```
+
+Please download the checkpoint and place it under the `weight/` directory.
+
+Test images can be placed under:
+
+```text
+test_imgs/
+├── ir/
+│   ├── 00001.png
+│   ├── 00002.png
+│   └── ...
+└── vi/
+    ├── 00001.png
+    ├── 00002.png
+    └── ...
+```
+
+To generate fused images, run:
+
+```bash
+python test.py
+```
+
+The fused results will be saved in:
+
+```text
+result_imgs/
+```
+
+## Training Dataset Preparation
 
 Please organize infrared and visible image pairs as follows:
 
@@ -177,53 +211,3 @@ During training, intermediate logs and training information are stored in:
 ```text
 logs/
 ```
-
-## Testing
-
-After training or downloading the pretrained weights, place the model weights in the following directory:
-
-```text
-weight/
-```
-
-Test images can be placed under:
-
-```text
-test_imgs/
-```
-
-or organized according to the dataset testing structure:
-
-```text
-dataset/fusion/LLVIP/test/
-├── ir/
-│   ├── 00001.png
-│   ├── 00002.png
-│   └── ...
-└── vi/
-    ├── 00001.png
-    ├── 00002.png
-    └── ...
-```
-
-To generate fused images, run:
-
-```bash
-python test.py
-```
-
-The fused results will be saved in:
-
-```text
-result_imgs/
-```
-
-## Pretrained Model
-
-Pretrained weights will be released at:
-
-```text
-(https://pan.baidu.com/s/16Cintf-sPJgf0qHPhRtXWA?pwd=jfg1/weight)
-```
-
-Please download the checkpoint and place it under the `weight/` directory.
