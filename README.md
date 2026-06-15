@@ -50,68 +50,13 @@ TensorBoard         2.14.0
 tqdm                4.66.1
 ```
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/GaoShang127/LCEFusion.git
-cd LCEFusion
-```
-
-### 2. Create a Conda Environment
-
-```bash
-conda create -n lcefusion python=3.8
-conda activate lcefusion
-```
-
-### 3. Install PyTorch
-
-This project uses PyTorch with CUDA 11.8:
-
-```bash
-pip install torch==2.0.0+cu118 torchvision==0.15.0+cu118 \
-  --extra-index-url https://download.pytorch.org/whl/cu118
-```
-
-If CUDA is not available on your device, you can install the CPU version of PyTorch instead, but training and inference will be slower.
-
-### 4. Install Other Dependencies
-
-```bash
-pip install opencv-python==4.8.1.78
-pip install opencv-contrib-python==4.8.1.78
-pip install numpy==1.21.6
-pip install scipy==1.9.1
-pip install scikit-image==0.21.0
-pip install pillow==9.5.0
-pip install matplotlib==3.5.0
-pip install kornia==0.7.3
-pip install einops==0.8.1
-pip install timm==1.0.19
-pip install tensorboard==2.14.0
-pip install tqdm==4.66.1
-pip install loguru==0.7.3
-pip install pytorch-msssim==1.0.0
-```
-
-### 5. Verify the Environment
-
-After installation, run the following command to check whether PyTorch and CUDA are available:
-
-```bash
-python -c "import torch; print('PyTorch:', torch.__version__); print('CUDA available:', torch.cuda.is_available()); print('CUDA version:', torch.version.cuda)"
-```
-
-If `CUDA available` returns `True`, the GPU environment has been successfully configured.
-
-
 ## Dataset Preparation
 
 Please organize infrared and visible image pairs as follows:
 
 ```text
 dataset/
-├── correct/                         # Color correction / ICAN training data
+├── adjustment/                         # ICAN training data
 │   └── Flickr2K/
 │       ├── train/
 │       │   ├── ir/
@@ -174,9 +119,6 @@ dataset/
                 ├── 00002.png
                 └── ...
 ```
-
-
-The infrared and visible images should be spatially aligned and have the same file names.
 
 ## Training
 
@@ -275,9 +217,6 @@ The fused results will be saved in:
 ```text
 result_imgs/
 ```
-
-Please make sure that the infrared and visible images are spatially aligned and share the same file names before testing.
-
 
 ## Pretrained Model
 
