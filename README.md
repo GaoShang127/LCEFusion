@@ -48,12 +48,16 @@ einops              0.8.1
 timm                1.0.19
 TensorBoard         2.14.0
 tqdm                4.66.1
+natsort             8.4.0
 ```
 
 ## Quick Start
 
 ```text
 (https://pan.baidu.com/s/16Cintf-sPJgf0qHPhRtXWA?pwd=jfg1/weight)
+```
+```text
+(https://drive.google.com/drive/folders/1K7iuGGUXpR1rscqnQ91SB3ezI6qVm7Km?usp=sharing)
 ```
 
 Please download the checkpoint and place it under the `weight/` directory.
